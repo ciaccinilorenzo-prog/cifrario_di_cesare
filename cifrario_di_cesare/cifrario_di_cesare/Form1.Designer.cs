@@ -101,10 +101,10 @@
             // 
             this.lbl_criptata.AutoSize = true;
             this.lbl_criptata.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_criptata.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_criptata.Location = new System.Drawing.Point(190, 270);
+            this.lbl_criptata.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_criptata.Location = new System.Drawing.Point(21, 341);
             this.lbl_criptata.Name = "lbl_criptata";
-            this.lbl_criptata.Size = new System.Drawing.Size(2, 33);
+            this.lbl_criptata.Size = new System.Drawing.Size(2, 22);
             this.lbl_criptata.TabIndex = 6;
             // 
             // lbl_3
@@ -155,10 +155,10 @@
             // 
             this.lbl_decriptata.AutoSize = true;
             this.lbl_decriptata.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_decriptata.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_decriptata.Location = new System.Drawing.Point(488, 270);
+            this.lbl_decriptata.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_decriptata.Location = new System.Drawing.Point(488, 341);
             this.lbl_decriptata.Name = "lbl_decriptata";
-            this.lbl_decriptata.Size = new System.Drawing.Size(2, 33);
+            this.lbl_decriptata.Size = new System.Drawing.Size(2, 22);
             this.lbl_decriptata.TabIndex = 12;
             // 
             // Form1

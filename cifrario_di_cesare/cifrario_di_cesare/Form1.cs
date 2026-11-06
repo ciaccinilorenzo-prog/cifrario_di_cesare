@@ -66,6 +66,44 @@ namespace cifrario_di_cesare
             string frase = txt_frase_D.Text, outputD2 = "";
             char outputD = ' ';
             int chiave, i = 0, modificatore;
+
+            chiave = Convert.ToInt32(txt_chiave_D.Text);
+
+            for (i = 0; i < frase.Length; i++)
+            {
+                if (frase[i] != ' ')
+                {
+                    modificatore = Convert.ToInt32(frase[i]);
+
+
+                    modificatore = modificatore - chiave;
+                    if (modificatore < 65)
+                    {
+                        modificatore = modificatore + 26;
+                    }
+                    else
+                    {
+                        if (modificatore < 97 && modificatore > 90)
+                        {
+                            modificatore = modificatore + 26;
+                        }
+                    }
+
+                    outputD = Convert.ToChar(modificatore);
+
+                    outputD2 = outputD2 + outputD;
+
+                }
+                else
+                {
+                    outputD2 = outputD2 + " ";
+                }
+
+
+            }
+            lbl_decriptata.Text = "la frase criptata è: " + outputD2.ToString();
         }
+
+        
     }
 }
