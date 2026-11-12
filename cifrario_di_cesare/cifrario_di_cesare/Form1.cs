@@ -32,29 +32,35 @@ namespace cifrario_di_cesare
                 {
                     modificatore = Convert.ToInt32(frase[i]);
                     
-
-                    modificatore = modificatore + chiave;
-                    if (modificatore > 122)
+                    modificatore += chiave;
+                    if (modificatore >= 122)
                     {
-                        modificatore = modificatore - 26;
+                        modificatore -= 96;
+                        modificatore %= 26;
+                        modificatore += 96;
                     }
                     else
                     {
-                        if (modificatore < 96 && modificatore > 90)
-                        {
-                            modificatore = modificatore - 26;
-                        }
+                        if (modificatore >= 65 && modificatore >= 90)
+                            modificatore -= 64;
+                            modificatore %= 26;
+                            modificatore += 64;
+                        
                     }
+
+
 
                     outputC = Convert.ToChar(modificatore);
 
                     outputC2 = outputC2 + outputC;
-                    
+
+
                 }
                 else
                 {
                     outputC2 = outputC2 + " ";
                 }
+
 
 
             }
