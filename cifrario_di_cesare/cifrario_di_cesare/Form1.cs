@@ -19,25 +19,97 @@ namespace cifrario_di_cesare
 
         private void btn_cripta_Click(object sender, EventArgs e)
         {
-            string frase = txt_frase_C.Text;
+            string frase = txt_frase_C.Text, outputC2 = "";
             char outputC = ' ';
             int chiave, i = 0, modificatore;
-            char t = frase[i];
+            
 
             chiave = Convert.ToInt32(txt_chiave_C.Text);
 
             for (i = 0; i < frase.Length; i++)
             {
-                modificatore = Convert.ToInt32(frase[i]);
+                if (frase[i] != ' ')
+                {
+                    modificatore = Convert.ToInt32(frase[i]);
+                    
+                    modificatore += chiave;
+                    if (modificatore >= 122)
+                    {
+                        modificatore -= 96;
+                        modificatore %= 26;
+                        modificatore += 96;
+                    }
+                    else
+                    {
+                        if (modificatore >= 65 && modificatore >= 90)
+                            modificatore -= 64;
+                            modificatore %= 26;
+                            modificatore += 64;
+                        
+                    }
 
-                modificatore = modificatore + chiave;
-
-                outputC = Convert.ToChar(modificatore);
 
 
-                //outputC = outputC + t;
+                    outputC = Convert.ToChar(modificatore);
+
+                    outputC2 = outputC2 + outputC;
+
+
+                }
+                else
+                {
+                    outputC2 = outputC2 + " ";
+                }
+
+
+
             }
-            lbl_criptata.Text = "la frase criptata è: " + outputC.ToString();
+            lbl_criptata.Text = "la frase criptata è: " + outputC2.ToString();
         }
+
+        private void btn_decripta_Click(object sender, EventArgs e)
+        {
+            string frase = txt_frase_D.Text, outputD2 = "";
+            char outputD = ' ';
+            int chiave, i = 0, modificatore;
+
+            chiave = Convert.ToInt32(txt_chiave_D.Text);
+
+            for (i = 0; i < frase.Length; i++)
+            {
+                if (frase[i] != ' ')
+                {
+                    modificatore = Convert.ToInt32(frase[i]);
+
+
+                    modificatore = modificatore - chiave;
+                    if (modificatore < 65)
+                    {
+                        modificatore = modificatore + 26;
+                    }
+                    else
+                    {
+                        if (modificatore < 97 && modificatore > 90)
+                        {
+                            modificatore = modificatore + 26;
+                        }
+                    }
+
+                    outputD = Convert.ToChar(modificatore);
+
+                    outputD2 = outputD2 + outputD;
+
+                }
+                else
+                {
+                    outputD2 = outputD2 + " ";
+                }
+
+
+            }
+            lbl_decriptata.Text = "la frase criptata è: " + outputD2.ToString();
+        }
+
+        
     }
 }
